@@ -1,1 +1,1 @@
-# VINTA-RESORT
+Vinta Resort.
