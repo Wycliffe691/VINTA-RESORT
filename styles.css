@@ -1,0 +1,834 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+.li{
+    list-style-type: none;
+    /* text-transform: capitalize; */
+
+}
+li a{
+    text-decoration: none;
+    color: black;
+}
+.nav-bar{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 2;
+    height: fit-content;
+}
+.nav-bar li{
+    text-transform: capitalize;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    display: inline-block;
+    padding: 1rem;
+    font-size: 20px;
+    font-family: 'Changa', sans-serif;
+    transition: 0.5s;
+}
+.nav-links ul li:hover{
+    background: orange;
+}
+.nav-bar img{
+    padding-top: 3px;
+    padding-left: 4rem;
+}
+.bar{
+    display: none;
+}
+
+/* NAVIGATION BAR RESPONSE FOR SMALL SCREENS */
+@media screen and (max-width: 768px) {
+    .nav-bar {
+            flex-direction: column;
+            /* align-items: center; */
+            height: auto;
+        }
+    
+        .nav-links {
+            flex: 1;
+            text-align: right;
+            display: none;/* add this line */
+            margin-top: 1rem;
+            text-align: right;
+            transform: translateX(100%); /* add this line */
+            transition: transform 0.5s ease-in-out; /* add this line */
+        }
+    
+        .nav-links ul li {
+            display: block;
+            margin-bottom: 0.5rem;
+            margin-left: 30%;
+        }
+    
+        .nav-links.show {
+            display: block;
+            position: static; /* change this line */
+            transform: translateX(0%); /* add this line */
+        }
+        .bar {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 35px;
+            margin-top: 0.5rem;
+            margin-right: 1rem;
+        }
+        
+    }
+/* NAVIGATION RESPONSE TO SMALL LAPTOPS AND TABLETS */
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .logo{
+        padding-top: 20px;
+    }
+}
+/* LANDING PAGE SLIDES */
+.landing-page img{
+    width: 100%;
+    height: 100vh;
+}
+
+/* home page */
+.home{
+    width: 70%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 150px;
+    align-self: center;
+    margin: auto;
+    position: relative;
+    flex-direction: row;
+    /* border: 2px solid black; */
+}
+.home ul li{
+    list-style-type: none;
+}
+
+.home-img {
+    position: relative;
+    width: 50%;
+    padding-top: 200px;
+}
+
+.home-img img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.home-img img.active {
+    display: block;
+}
+
+/* Add animation */
+@keyframes slideshow {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.home-img img {
+    animation: slideshow 5s infinite;
+}
+.home-text{
+    margin-left: 40px;
+    padding-top: 0px;
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    width: 45%;
+    margin-left: 5%;
+    z-index: 1;
+}
+.home-text p{
+    line-height: 28px;
+    font-weight: 500;
+    font-size: 25px;
+}
+.home-text ul{
+    font-family: 'Changa', sans-serif;
+    font-weight: 700;
+}
+.home-text strong{
+    font-family: 'Changa', sans-serif;
+    font-weight: 700;
+    color: orange;
+    font-size: 40px;
+}
+/* LANDING PAGERESPONSIVE */
+@media screen and (max-width: 768px) {
+    .home{
+        width: 90%;
+        /* max-width: 1200px; */
+        height: fit-content;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 150px;
+        margin: auto;
+        flex-direction: column;
+    }
+    
+    .home-img {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .home-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .home-img img.active {
+        opacity: 1;
+    }
+    
+    .home-text{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-family: 'Josefin Slab', serif;
+        font-size: 20px;
+        width: 100%;
+    }
+    
+    .home-text p{
+        line-height: 28px;
+        font-weight: 500;
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    
+    .home-text ul{
+        font-family: 'Changa', sans-serif;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .home-text li{
+        list-style-type: none;
+        margin-right: 40px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .home-text li span{
+        font-weight: 700;
+        color: orange;
+        margin-right: 5px;
+    }
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .home {
+        width: 90%;
+        flex-direction: column;
+        padding-top: 100px;
+    }
+
+    .home-img {
+        width: 100%;
+        padding-top: 100px;
+        margin-bottom: 50px;
+        margin-left: 0;
+    }
+
+    .home-text {
+        width: 100%;
+        margin: 0;
+        margin-top: 150px;
+        padding-top: 0;
+        text-align: left;
+    }
+
+    .home-text p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .home-text ul {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+
+    .home-text strong {
+        font-size: 30px;
+    }
+}
+
+/* accomodation */
+.title{
+    margin-top: 2rem;
+    width: 70%;
+    text-align: center;
+    font-family: 'Changa', sans-serif;
+    font-weight: 700;
+    color: orange;
+    font-size: 40px;
+    text-decoration: underline;
+}
+.rooms{
+    width: 70%;
+    height: fit-content;
+    justify-content: space-between;
+    display: flex;
+    border: 2px solid black;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 0;
+    margin-top: 1rem;
+    margin-left: 4px;
+}
+.rooms .img1{
+    width: 190%;
+}
+
+/* .bedroom img{
+    width: 60%;
+} */
+.additional-img{
+    margin-left: 25%;
+    /* margin-right: 0%; */
+}
+.additional-img  img{
+    width: 40%;
+}
+.bedroom{
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.5rem;
+}
+.bedroom button{
+    padding: 10px;
+    margin: 10px;
+    background: orange;
+    font-family: 'Changa', sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ;
+}
+
+/* ACCOMODATION RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .rooms {
+        flex-direction: column;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-top: 0;
+        padding-right: 0;
+    }
+
+    .additional-img {
+        display: none;
+    }
+    .bedroom,
+    .additional-img {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /* text-align: center; */
+    }
+
+    .rooms .img1 {
+        width: 100%;
+    }
+
+    .additional-img img {
+        width: 70%;
+    }
+}
+
+
+/* HALLS */
+.conference{
+    width: 70%;
+    border: 2px solid black;
+    display: flex;
+    margin-top: 2rem;
+    padding: 0;
+    margin-left: 10px;
+    /* padding-left: 5%; */
+    /* padding-top: 5%; */
+    padding-right: 0;
+}
+.halls .hall1{
+    width: 100%;
+    height: auto;
+}
+
+.additional-halls{
+    margin-left: 4rem;
+}
+.halls{
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.conference button{
+    padding: 10px;
+    margin: 10px;
+    background: orange;
+    font-family: 'Changa', sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ;
+    margin: 0 auto 1rem;
+    margin-left: 0.5rem;
+}
+/* HALLS RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .conference {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .halls {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .additional-halls {
+        display: none;
+        margin: 0;
+        text-align: right;
+    }
+
+    .additional-halls img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .conference {
+        flex-wrap: wrap;
+    }
+
+    .halls {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .additional-halls {
+        display: none;
+    }
+
+    .halls .hall1 {
+
+        max-width: 100%;
+        height: auto;
+        margin-right: 2rem;
+    }
+}
+/* Refreshments */
+.refreshment-facilities{
+    width: 70%;
+    display: flex;
+    border: 2px solid black;
+    /* padding: 1rem; */
+    padding-right: 0;
+    margin-top: 2rem;
+    margin-left: 4px;
+
+}
+.refreshment-facilities .pool1{
+    width: 500px;
+    height: 370px;
+}
+.refreshment-facilities button{
+    padding: 10px;
+    margin: 10px;
+    background: orange;
+    font-family: 'Changa', sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ;
+}
+.refreshment-facilities a{
+    text-decoration: none;
+}
+.additional-facilities{
+    margin-left: 4rem;
+}
+.swimming-pool{
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.5rem;
+}
+/* REFRESHMENTS RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+
+    /* Refreshments */
+    .refreshment-facilities {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid black;
+        /* margin-top: 2rem; */
+        padding: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .refreshment-facilities .pool1 {
+        width: 100%;
+        height: auto;
+    }
+
+    .additional-facilities {
+        display: none;
+    }
+
+    
+
+    .swimming-pool {
+        font-family: 'Josefin Slab', serif;
+        font-size: 1.5rem;
+        /* text-align: center; */
+        padding: rem;
+    }
+
+    .refreshment-facilities button {
+        /* margin: 1rem auto; */
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .refreshment-facilities {
+      flex-direction: column;
+      width: 70%;
+    }
+  
+    .refreshment-facilities .pool1 {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    padding-top: 0;
+    }
+
+  
+    .additional-facilities img {
+        display: none;
+    }
+  }
+  
+/* packages */
+.packages-section{
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.25rem;
+    width: 70%;
+    margin: 2rem;
+    max-width: 1200px;
+}
+.packages{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+.packs{
+    width: calc(33.33% - 2rem);
+        /* divide into 3 equal columns with some margin */
+        margin: 1rem;
+}
+.packages-section button{
+    padding: 10px;
+    margin: 10px;
+    background: orange;
+    font-family: 'Changa', sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    /* transition: 0.5s ; */
+}
+.pack-cards.outdoor-events .more-info {
+    display: none;
+}
+
+.pack-cards{
+    height: max-content;
+    border: 2px solid black;
+    width: fit-content;
+    border-radius: 8px;
+}
+.packs .more-info {
+    display: none;
+}
+.pack-cards h3,
+.pack-cards p {
+    max-width: 330px;
+    margin-top: 10px;
+}
+/* Packages Responsive design */
+@media screen and (max-width: 768px) {
+    .packages {
+        flex-wrap: wrap;
+    }
+
+    .packs {
+        width: calc(50% - 1rem);
+    }
+    .pack-cards {
+        max-width: 350px;
+        width: 100%;
+    }
+    .pack-cards img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .packs {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Packages Responsive design */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .packages {
+        flex-wrap: wrap;
+    }
+
+    .packs {
+        width: calc(50% - 1rem);
+    }
+
+    .pack-cards {
+        max-width: 350px;
+        width: 100%;
+    }
+
+    .pack-cards {
+        max-width: 450px;
+    }
+
+    .pack-cards img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+/* footer styling */
+.footer{
+    border-top: 2px solid black;
+    display: flex;
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.form{
+    margin-left: 5%;
+    padding: 20px;
+    width: 25%;
+    border-right: 2px solid black;
+
+}
+.form .button{
+    padding: 10px;
+    /* margin: 10px; */
+    background: orange;
+    font-family: 'Changa', sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.social-links{
+    width: 20%;
+    line-height: 30px;
+    border-right: 2px solid black;
+    margin-left: 7%;
+    padding: 20px;
+}
+.social-links i{
+    color: orange;
+}
+.footer a{
+    text-decoration: none;
+    color: black;
+}
+
+.social-links a:hover{
+    text-decoration: underline;
+}
+.review-card{
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+}
+.review-card img{
+    border-radius: 50%;
+    padding: 10px;
+}
+.footer .reviews button{
+    padding: 10px;
+    /* margin: 10px; */
+    background: orange;
+    font-family: 'Changa', sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.reviews-btn{
+    margin-left: 80%;
+    margin-bottom: 1rem;
+}
+/* FOOTER RESPONSE DESIGN */
+@media screen and (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+    }
+
+    .form,
+    .social-links,
+    .reviews {
+        width: 100%;
+        border: none;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .reviews-btn {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .footer{
+        flex-wrap: wrap;
+    }
+    .form, .social-links {
+        border-right: none;
+    }
+    .form{
+        width: 50%;
+    }
+}
+/* Reviews page styling  Reviews.html*/
+/* .container{
+    width: 70%;
+    text-align: center;
+}
+.container h2{
+
+    text-align: center;
+} */
+.container{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.title{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.title h2{
+    text-transform: capitalize;
+}
+
+.container img{
+    border-radius: 50%;
+    width: 300px;
+    height: 199px;
+}
+
+.container{
+    width: 80vh;
+    max-width: 620px;
+    margin: auto;
+}
+.review{
+    background: orange;
+    padding: 1.5rem 2rem;
+    /* margin-top: 100px; */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(231, 133, 133, 0.1);
+    text-align: center;
+}
+.review:hover{
+    box-shadow: 0 6px 15px rgb(92, 63, 63);
+}
+.review h4{
+    text-transform: capitalize;
+    font-family: 'Changa', sans-serif;
+}
+
+.review #info{
+    color: black;
+    font-family: 'Josefin Slab', serif;
+    font-size: larger;
+}
+.btn-container{
+    margin: 20px;
+    padding: 1px;
+    font-size: 1rem;
+}
+.prev-btn{
+    margin-right: 6px;
+    border: none;
+    background: orange;
+    color: black;
+    padding: 6px;
+    font-size: 30px;
+}
+.next-btn{
+    margin-left: 6px;
+    border: none;
+    background: orange;
+    color: black;
+    padding: 6px;
+    font-size: 30px;
+}
